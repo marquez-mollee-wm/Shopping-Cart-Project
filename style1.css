@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Raleway', sans-serif;
+    background: #2c3e50;
+    font-size: 15px;
+}
+/* main content wrappers */
+main {
+    height: 1700px;
+}
+/* Site header */
+.site-header {
+    background: #ecf0f1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+}
+.logo img {
+    transition: all .7s ease;
+}
+.full-header .logo img {
+    max-width: 200px;
+}
+.small-header .logo img {
+    max-width: 100px;
+}
+
+.full-header{
+    height: 140px;
+}
+
+.small-header{
+    height: 100px;
+
+}
+
+nav{
+    float: right;
+    position: relative;
+    z-index: 99;
+}
