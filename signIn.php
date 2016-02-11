@@ -1,120 +1,35 @@
 
 <?php
 
-require_once('connect.php');
-$error = false;
-$success = false;
-​
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        //echo "<br> id_field: ". $row["id_field"]. ", " . "    AnotherThing: ". $row["AnotherThing"]. ", " . "One Last field:". $row["One Last field"] . "<br>";
-    }
-} else {
-    echo "Not being used";
-}
-​
-​
-​
-​
-if ( ! empty($_POST['username'])){
-    $name = ($_POST['username']);
-    insertInfo();
-}
-​
-function checkPass () {
-    ​
-    $servername = "localhost";
-    $username = "root";
-    $password = "root";
-    $dbname = "mydb";
-    ​
-    ​
-// Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-    ​
-    ​
-    $sql = "SELECT * FROM users";
-    $result = $conn->query($sql);
-    ​
-    if ($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()) {
-            ​
-            $usrn = $row["Username"];
-            $name = ($_POST['username2']);
-            $pass = ($_POST['password3']);
-            switch ($usrn) {
-                case ($usrn == $name):
-                    $pass2= $row["Password"];
-                    ​
-                    global $used;
-                    $used = "Your Username was accepted!";
-                    ​
-                    ​
-                    ​
-                    ​
-                    ​
-                    ​
-                    if ($pass2 == $pass) {
-                        echo "<script type='text/javascript'>alert('victory');</script>";
-                        global $used3;
-                        header('Location: home.php');
-                        $used3 = "Your Password accepted.";
-                    }
-                    else {
-                        global $used3;
-                        $used3 = "<br> Your Password was denied.";
-                    }
-                    ​
-                    ​
-                    break;
-                case ($usrn != $name):
-                    global $used;
-                    if ($used == "Your Username was accepted!") {
-                        ​
-                        ​
-                        ​
-                        ​
-                        ​
-                    }
-                    else {
-                        $used = "Your Username is incorrect.";
-                    }
-                    ​
-                    break;
-            }
-            ​
-        }
-        ​
-        // output data of each row
-        ​
-    } else {
-        echo "No results found in table.";
-    }
-}
-​
-​
-$conn->close();
-​
-function insertInfo () {
-    echo "hi thar";
-    $servername = "localhost";
-    $username = "root";
-    $password = "root";
-    $dbname = "mydb";
-    ​}
-    ​
+include_once('connect.php');
 
-​
-​
-if ( ! empty($_POST['username2'])){
-    $name = ($_POST['username2']);
-    checkPass();
-}
+
+    $uname = $_POST['username'];
+    $pass = $_POST['password'];
+
+    $sql = "SELECT count(*) FROM users WHERE(
+     username='".$uname."' and  password='".$pass."')";
+
+
+
+
+    $qury = mysql_query($sql);
+
+    $result = mysql_fetch_array($qury);
+
+    if($result[0]>0)
+    {
+        echo "Successful Login!";
+        $_SESSION['userName'] = $uname;
+        echo "<br>Welcome".$_SESSION['userName']."!";
+
+    }
+    else
+    {
+        echo "Login Failed";
+    }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -144,10 +59,10 @@ if ( ! empty($_POST['username2'])){
 
         <div class="indexContent">
             <form name='form2' method='post' id="form2" class="navbar-form navbar-right">
-                <input type='text' name="username2" id='username2' placeholder="Username" class="form-control">
-                <input type='password' name='password3' id='password3' placeholder="Password" class="form-control">
+                <input type='text' name="username" id='username2' placeholder="Username" class="form-control">
+                <input type='password' name='password' id='password3' placeholder="Password" class="form-control">
+                <input type='submit' name='submit'>
             </form>
-            <button onclick="signin()" > Sign In! </button>
         </div>
     </div>
 </div>
