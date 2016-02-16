@@ -30,7 +30,7 @@ img{
     margin: 0;
     float: left;
     color: #fff;
-    width: 35%;
+    width: 30%;
     background: rgba(226, 224, 226, 0.7);
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 400;
@@ -42,7 +42,7 @@ img{
 nav {
     padding: 0;
     margin: 0;
-    width: 65%;
+    width: 70%;
     float: right;
 }
 
@@ -59,7 +59,7 @@ header nav ul li {
     float: left;
     margin: 0;
     display: inline;
-    width: 25%;
+    width: 20%;
     text-align: center;
     background: rgba(226, 224, 226, 0.7);
 }
@@ -169,12 +169,28 @@ body{
 
 .cart{
     margin:auto;
-    right: 80%;
-    height: 40px;
-    width: 40px;
+    padding-top: 20px;
+    float: inherit;
+    height: 0;
+    width: 900px;
+    position: absolute;
+}
+
+.cart a{
+    float: inherit;
 }
 
 .cart img{
     height: 30px;
     width: 30px;
+    float: inherit;
+}
+
+.badge{
+    float: inherit;
+}
+
+.container p{
+    margin: auto;
+    padding: 30px;
 }

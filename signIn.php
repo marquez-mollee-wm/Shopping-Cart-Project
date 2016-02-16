@@ -1,12 +1,4 @@
 
-<?php
-
-if(@$_POST['submit']) {
-
-
-}
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,13 +11,13 @@ if(@$_POST['submit']) {
 <div class="signInContainer">
     <!--HEADER-->
     <header class="head">
-        <h1>Lunch Lady</h1>
+        <h1>modsupplies</h1>
     </header>
     <!-- END HEADER-->
     <div class="box">
 
         <div class="rightside">
-            <img src="pics/sign%20in.jpg">
+            <img src="...">
         </div>
 
         <header class="title">
@@ -37,7 +29,7 @@ if(@$_POST['submit']) {
             <form name='form2' method='post' id="form2" class="navbar-form navbar-right">
                 <input type='text' name="username" id='username2' placeholder="Username" class="form-control">
                 <input type='password' name='password' id='password3' placeholder="Password" class="form-control">
-                <input type='submit' name='submit'>
+                <input type='submit' name='submit' onclick="">
             </form>
         </div>
     </div>
@@ -45,9 +37,9 @@ if(@$_POST['submit']) {
 <!--FOOTER-->
 <footer>
     <div class="copyright">
-        <p>&copy 2015 - Lunch Lady,Inc. All Rights Reserved</p>
+        <p>&copy 2015 - modsupplies,Inc. All Rights Reserved</p>
     </div>
-    <div class="logo">
+    <div class="logo1">
         <img src="pics/logo.png">
     </div>
     <div class="links">
