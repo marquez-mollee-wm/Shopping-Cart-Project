@@ -87,7 +87,7 @@ header nav ul li a:focus {
 /* HEAD SECTION */
 
 header {
-    background: #839e82;
+    background: #000000;
     background-size: cover;
     background-attachment: fixed;
 }
@@ -137,6 +137,44 @@ header {
 }
 
 body{
-    background: url("pics/background.png");
+    background: url("pics/brickwall.png");
 }
 
+.item img{
+    width: 100%;
+    max-height: 360px;
+}
+
+.products{
+    margin: auto;
+}
+
+.products table{
+    margin: auto;
+}
+
+.products td {
+    margin: auto;
+    width: 38%;
+
+}
+.products tr {
+
+}
+.products img{
+    padding-top: 40px;
+   height: 300px;
+    width: 250px;
+}
+
+.cart{
+    margin:auto;
+    right: 80%;
+    height: 40px;
+    width: 40px;
+}
+
+.cart img{
+    height: 30px;
+    width: 30px;
+}
