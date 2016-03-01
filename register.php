@@ -3,6 +3,8 @@ require_once('connect.php');
 $error = false;
 $success = false;
 
+session_start();
+
 if(@$_POST['addUser']) {
 
 
@@ -46,8 +48,8 @@ if(@$_POST['addUser']) {
             'email' => $_POST['email'],
             'address' => $_POST['address'],
             'aptNum' => $_POST['aptNum'],
-            'city' => $_POST['city'],
             'zip' => $_POST['zip'],
+            'city' => $_POST['city'],
             'state' => $_POST['state'],
             'phone' => $_POST['phone'],
             'creditCard' => $_POST['creditCard'],
@@ -58,6 +60,7 @@ if(@$_POST['addUser']) {
 
     if ($result) {
         $success = $_POST['username'] . " was successfully saved.";
+        header("Location: test.php");
     } else {
         $success = "There was an error saving " . $_POST['username'];
     }
@@ -83,7 +86,7 @@ if(@$_POST['addUser']) {
                 <h1>Register</h1>
             </header>
             <div id="form" class="content">
-                <form method="post">
+                <form name="addUser" method="post">
                     First Name
                     <input type="text" placeholder="Mollee" class="enjoy-css" name="firstName">
                     <br>
@@ -196,7 +199,8 @@ if(@$_POST['addUser']) {
                     Expiration Date
                     <input type="text" placeholder="mm/yy" class="enjoy-css" name="expDate">
                     <br>
-                    <input type="submit" name="addUser">
+                    <button type="submit" name="addUser" value="1">Submit</button>
+                    <?php echo $success ?>
                 </form>
             </div>
             <footer>

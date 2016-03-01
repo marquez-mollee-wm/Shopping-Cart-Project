@@ -26,10 +26,10 @@
 
 
         <div class="indexContent">
-            <form name='form2' method='post' id="form2" class="navbar-form navbar-right">
+            <form name='login' method='post' id="form2" class="navbar-form navbar-right" action="login.php">
                 <input type='text' name="username" id='username2' placeholder="Username" class="form-control">
                 <input type='password' name='password' id='password3' placeholder="Password" class="form-control">
-                <input type='submit' name='submit' onclick="">
+                <button type='submit' name='login' value='1'>Submit</button>
             </form>
         </div>
     </div>
